@@ -56,7 +56,7 @@ Os códigos disponíveis neste repositório se referem à solução (prática) d
 
 A página inicial do aplicativo tem a seguinte aparência:
 
-![](home.png)
+![](assets/home.png)
 
 Possui 4 botões, na barra superior: 
 
