@@ -1,0 +1,8 @@
+{
+    "body": "{\"age\": 30,\"possessions\": [\"Casa\", \"Carro\"],\"address\":\"Rua Jose da Silva, 123\",\"income\": \"Salary\"}",
+    "requestContext": {
+        "identity": {
+            "cognitoIdentityId": "123.456.789-10"
+        }
+    }
+}
