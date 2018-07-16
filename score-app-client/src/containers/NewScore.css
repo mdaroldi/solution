@@ -1,0 +1,21 @@
+.NewScore form {
+    padding-bottom: 15px;
+  }
+  
+  .NewScore form textarea {
+    height: 50px;
+    font-size: 24px;
+  }
+
+  .NewScore .scores {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    overflow: hidden;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .NewScore .scores p {
+    color: #666;
+  }
