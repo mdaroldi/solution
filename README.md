@@ -26,12 +26,12 @@
 
 O problema proposto abre espaço para muitos tipos de solução, levando em conta em que não há um detalhamento na descrição do armazenamento. Não fica claro a diferença, no nível de segurança, entre as Bases A e B, então proponho uma solução de acordo com o conhecimento limitado que possuo do caso. 
 
-Na arquitetura da solução, procurei usar as tecnologias que estão dentro do ferramental da empresa, mas também pela alta escalabilidade e disponibilidade, sem falar da segurança e auto-gerenciamento de várias destas ferramentas. Na figura abaixo é mostrada a arquitetura usada, junto com algumas alternativas.
+Na arquitetura da solução, procurei usar as tecnologias que estão dentro do ferramental da empresa, mas também pela alta escalabilidade e disponibilidade, sem falar da segurança e autogerenciamento de várias destas ferramentas. Na figura abaixo é mostrada a arquitetura usada, junto com algumas alternativas.
 
 ![](assets/arch.png)
 
 ### Base A
-Para a Base A, imaginei o uso de um banco de dados SQL como MySQL ou PostgreSQL. Os dados seriam armazenados já criptografados. Um conatiner, tipo Docker, conteria o microserviço responsável por controlar o acesso externo, fazendo a descriptografia e gerenciando chaves públicas e privadas. O serviço SQS serviria para controlar a fila de solicitações e evitando a perda de alguma delas, caso haja algum problema com o nanoserviço responsável pela chamada. Cada Base possui seu próprio Lambda, contendo uma função, GET no caso de todos eles, já que o usuário só pode solicitar informações do aplicativo, não podendo fazer edições ou criação de registros no banco de dados. 
+Para a Base A, imaginei o uso de um banco de dados SQL como MySQL ou PostgreSQL. Os dados seriam armazenados já criptografados. Um container, tipo Docker, conteria o microserviço responsável por controlar o acesso externo, fazendo a descriptografia e gerenciando chaves públicas e privadas. O serviço SQS serviria para controlar a fila de solicitações e evitando a perda de alguma delas, caso haja algum problema com o nanoserviço responsável pela chamada. Cada Base possui seu próprio Lambda, contendo uma função, GET no caso de todos eles, já que o usuário só pode solicitar informações do aplicativo, não podendo fazer edições ou criação de registros no banco de dados. 
 
 ### Base B
 A Base B possui características similares à Base A, porém exige um desempenho melhor, além de ser também utilizada para extração de dados por meio de Machine Learning. Poderia seguir a mesma fórmula da Base A, usando um banco de dados relacional, porém o microserviço deveria ser menos oneroso, em relação à criptografia. A solução que propus e implementei - ver códigos neste repositório - faz uso do DynamoDB, um banco NoSQL da Amazon. Possui um alto nível de segurança, permitindo criptografar os dados, além da comunicação interna protegida. 
@@ -114,5 +114,5 @@ Sugestão de dados que podem ser usados pelo time de cientistas de dados, que po
 
 ### Base C
 * Última consulta do CPF em um Bureau de crédito
-* Movimentação ﬁnanceira nesse CPF
-* Dados relacionados a última compra com cartao de crédito vinculado ao CPF
+* Movimentação financeira nesse CPF
+* Dados relacionados a última compra com cartão de crédito vinculado ao CPF
