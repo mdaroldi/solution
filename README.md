@@ -24,9 +24,9 @@
 
 ## Arquitetura Utilizada
 
-O problema proposto abre espaço para muitos tipos de solução, levando em conta em que não há um detalhamento na descrição do armazenamento. Não fica claro a diferença, no nível de segurança, entre as Bases A e B, então proponho uma solução de acordo com o conhecimento limitado que possuo do caso. 
+O problema proposto abre espaço para muitos tipos de solução, levando em conta em que não há um detalhamento na descrição do armazenamento. Não fica claro a diferença, no nível de segurança, entre as Bases A e B, então proponho uma solução de acordo com o conhecimento limitado que é apresentado. 
 
-Na arquitetura da solução, procurei usar as tecnologias que estão dentro do ferramental da empresa, mas também pela alta escalabilidade e disponibilidade, sem falar da segurança e autogerenciamento de várias destas ferramentas. Na figura abaixo é mostrada a arquitetura usada, junto com algumas alternativas.
+Na arquitetura da solução, procurei usar as tecnologias que estão dentro do ferramental da empresa, mas também pela alta escalabilidade e disponibilidade, sem falar da segurança e autogerenciamento de várias destas ferramentas. Outra grande vantagem nesta solução "serverless" é o custo bastante baixo, ofertado pela AWS, sendo alguns serviços gratuitos e outros só cobrados quando usados. Na figura abaixo é mostrada a arquitetura usada, junto com algumas alternativas.
 
 ![](assets/arch.png)
 
@@ -90,7 +90,22 @@ A arquitetura básica do aplicativo, com seus componentes principais:
 
 ![](assets/arch-app.png)
 
+---
 
+#### Para rodar aplicativo localmente:
+* Clonar o repositório
+* Acessar a pasta "score-app-client"
+* Rodar o comando "npm install", para instalar os módulos
+* Rodar o comando "npm start"
+* Acessar a página em um web browser no endereço "localhost:3000"
+
+#### Para testar a API
+Tendo já clonado o repositório:
+
+* Acessar a pasta "score-app-api":
+* Rodar o comando "npm install", para instalar os módulos
+* Para testar o comando GET, rodar no terminal: 
+> serverless invoke local --function get --path mocks/get-event.json
 
 
 ## Dados Armazenados
