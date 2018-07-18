@@ -47,9 +47,9 @@ Entre o cliente e os Lambdas foi usado o serviço API Gateway, que é um serviç
 
 O aplicativo feito com o React.js, foi alojado em um bucket S3. Para garantir uma alta disponibilidade do serviço, optei por usar o CloudFront, que é uma rede de entrega de conteúdo (CDN) global aplicativos e APIs aos usuários com segurança, baixa latência e altas velocidades de transferência.
 
-O aplicativo pode ser acessado por este [link](http://d192yw1qrndjzc.cloudfront.net).
+O aplicativo pode ser acessado por este [link](http://d1bamkta2nu497.cloudfront.net).
 
-*Observação: o aplicativo até o momento não está completo, ou seja, ainda não mostra na tela o resultado da busca pelo CPF.
+*Observação: o aplicativo pode ser testado com 3 CPFs registrados no banco de dados: 11122233344, 23456789011, e 55566677788.
 
 ---
 
